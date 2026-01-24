@@ -3,97 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A|Ω⟩ INSTITUTE</title>
+    <title>A|Ω⟩ INSTITUTE // ACCESS TERMINAL</title>
     <style>
-        body { 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-            background-color: #111; 
-            color: #eee; 
-            text-align: center; 
-            padding-top: 60px; 
-            margin: 0;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        
-        /* Logo & Branding */
-        img.logo { 
-            width: 180px; 
-            margin-bottom: 20px; 
-            border-radius: 50%; 
-            border: 2px solid #333;
-        }
-        h1 { 
-            font-size: 3em; 
-            letter-spacing: 4px; 
-            font-weight: 300; 
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        
-        /* The Manifesto */
-        .manifesto { 
-            font-family: 'Georgia', serif;
-            font-style: italic; 
-            color: #888; 
-            font-size: 1.2em;
-            margin-bottom: 60px; 
-            line-height: 1.6;
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111;
+            --text-main: #b0b0b0;
+            --text-bright: #eee;
+            --accent: #fff;
+            --border-dim: #333;
+            --border-bright: #fff;
         }
 
-        /* The Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            text-align: center; 
+            padding-top: 80px; 
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+        
+        /* --- BRANDING --- */
+        img.logo { 
+            width: 160px; 
+            margin-bottom: 30px; 
+            border-radius: 0%; /* Sharp edges for raw data look */
+            border: 1px solid var(--border-dim);
+            filter: grayscale(100%) contrast(120%); /* Remove warmth */
+        }
+
+        h1 { 
+            font-family: 'Courier New', 'Roboto Mono', monospace;
+            font-size: 2.5em; 
+            letter-spacing: -2px; 
+            font-weight: 700; 
+            margin-bottom: 10px;
+            color: var(--text-bright);
+            text-transform: uppercase;
+        }
+        
+        /* --- MANIFESTO BLOCK --- */
+        .manifesto { 
+            font-family: 'Courier New', 'Roboto Mono', monospace;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            color: #666; 
+            margin: 0 auto 80px auto; 
+            line-height: 1.4;
+            max-width: 580px;
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
             text-align: left;
         }
 
-        /* The Cards */
-        .card {
-            background: #1a1a1a;
-            padding: 25px;
-            border: 1px solid #333;
-            border-radius: 8px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+        /* --- GRID SYSTEM --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: left;
         }
+
+        /* --- CARDS (BRUTALIST STYLE) --- */
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border: 1px solid var(--border-dim);
+            border-radius: 0px; /* SHARP CORNERS */
+            transition: all 0.1s ease-in-out;
+        }
+
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #4db8ff;
+            transform: translateY(-2px);
+            border-color: var(--border-bright);
+            background: #141414;
         }
         
-        /* Typography within Cards */
+        /* --- TYPOGRAPHY --- */
         h3 { 
+            font-family: 'Courier New', 'Roboto Mono', monospace;
             margin-top: 0; 
-            color: #4db8ff; 
-            font-size: 1.1em; 
+            color: var(--text-bright); 
+            font-size: 1.0em; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            letter-spacing: 2px; 
+            border-bottom: 1px solid var(--border-dim);
+            padding-bottom: 12px;
+            margin-bottom: 15px;
         }
+
         h4 {
-            margin: 5px 0 10px 0;
-            color: #ccc;
-            font-weight: 400;
-        }
-        p { font-size: 0.9em; color: #888; line-height: 1.5; }
-
-        /* Links List */
-        ul.links { list-style: none; padding: 0; margin-top: 20px; }
-        ul.links li { margin-bottom: 10px; }
-        ul.links a { 
-            color: #eee; 
-            text-decoration: none; 
-            border-bottom: 1px dotted #555; 
-            transition: color 0.2s;
-        }
-        ul.links a:hover { color: #4db8ff; border-bottom: 1px solid #4db8ff; }
-
-        /* --- NEW FOOTER STYLE --- */
-        footer {
-            margin-top: 60px;
-            padding-bottom: 20px;
-            font-size: 0.75em; /* "Fine" size */
-            color: #444;       /* "Subtle" grey */
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0 0 8px 0;
+            color: #888;
+            font-size: 0.9em;
+            font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        p { 
+            font-size: 0.9em; 
+            color: #666; 
+            line-height: 1.6; 
+            margin-bottom: 20px;
+        }
+
+        /* --- DATA LINKS --- */
+        ul.links { list-style: none; padding: 0; margin: 0; }
+        ul.links li { margin-bottom: 8px; font-family: 'Courier New', monospace; font-size: 0.85em; }
+        
+        ul.links a { 
+            color: #999; 
+            text-decoration: none; 
+            border-bottom: 1px dotted #444; 
+            transition: color 0.1s;
+            display: block;
+            padding: 4px 0;
+        }
+        
+        ul.links a:hover { 
+            color: var(--accent); 
+            border-bottom: 1px solid var(--accent); 
+        }
+        
+        ul.links a::before {
+            content: "> ";
+            color: #333;
+        }
+        ul.links a:hover::before {
+            color: var(--accent);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 100px;
+            padding-bottom: 40px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7em;
+            color: #333;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
@@ -105,30 +158,32 @@
         
         <h1>A|Ω⟩ INSTITUTE</h1>
         
-        <p class="manifesto">
+        <div class="manifesto">
             Advancing the structural foundations of mathematical physics.<br>
-            Formalizing the geometric structure of phenomenal experience.
-        </p>
+            Formalizing the geometric structure of phenomenal experience.<br>
+            <br>
+            // RIGOR IS THE ONLY METRIC.
+        </div>
 
         <div class="grid">
             <div class="card">
                 <h3>PHYSICS</h3>
                 <h4>High-Energy & Gravitational Theory</h4>
-                <p>Non-perturbative analysis of vacuum structure, causal horizons, and the arithmetic continuum.</p>
+                <p>Non-perturbative analysis of vacuum structure, causal horizons, and the continuum.</p>
                 <ul class="links">
-                    <li><a href="https://doi.org/10.5281/zenodo.17844825">The Horizon Trident (Preprint)</a></li>
-                    <li><a href="https://doi.org/10.5281/zenodo.17905287">Primitive Spectra (Preprint)</a></li>
-                    <li><a href="https://github.com/AlphaOmega-Institute/AlphaOmega-Theory">GitHub: AlphaOmega-Theory</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.17844825">Black Hole Thermodynamics</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.17905287">Spectral Analysis</a></li>
+                    <li><a href="https://github.com/AlphaOmega-Institute/AlphaOmega-Theory">Repo: AlphaOmega-Theory</a></li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3>PHENOMENOLOGY</h3>
-                <h4>Cognitive Geometry</h4>
-                <p>Axiomatic modeling of the psychophysical interface and the geometric phase of experience.</p>
+                <h4>Cognitive Geometry & Operator Theory</h4>
+                <p>Formalizing the "Hard Problem" as a measurement-theoretic constraint. Deriving the π/2 phase signature of Agency via indefinite metric quantization.</p>
                 <ul class="links">
-                    <li><a href="https://philpapers.org/rec/YIATAO">Axioms of Cognitive Geometry</a></li>
-                    <li><span style="color:#555">Repo: AlphaOmega-Phenom (Coming Soon)</span></li>
+                    <li><a href="https://philpapers.org/rec/YIATAO">The A|Ω⟩ Formalism</a></li>
+                    <li><a href="https://philpapers.org/rec/YIATHP">Topological Chromatic Spaces</a></li>
                 </ul>
             </div>
 
@@ -143,7 +198,8 @@
         </div>
 
         <footer>
-            &copy; 2026 ALPHA OMEGA LATTICE CORPORATION
+            &copy; 2026 ALPHA OMEGA LATTICE CORPORATION<br>
+            NEW ORLEANS, USA
         </footer>
 
     </div>
