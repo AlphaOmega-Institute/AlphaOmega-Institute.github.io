@@ -25,33 +25,30 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
         
         /* --- BRANDING --- */
         img.logo { 
             width: 160px; 
             margin-bottom: 30px; 
-            border-radius: 0%; /* Sharp edges for raw data look */
+            border-radius: 0%; 
             border: 1px solid var(--border-dim);
-            filter: grayscale(100%) contrast(120%); /* Remove warmth */
+            filter: grayscale(100%) contrast(120%);
         }
 
         h1 { 
-        /* SWITCH TO SANS-SERIF: Cleaner, colder, less "costume" */
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    
-        /* WIDE TRACKING: Makes it look "Architectural" and expensive */
-        letter-spacing: 0.15em; 
-    
-        font-size: 2.2em; 
-        font-weight: 700; 
-    
-        /* SPACE IT OUT: Add breathing room above and below */
-        margin-top: 20px;
-        margin-bottom: 50px; 
-    
-        color: var(--text-bright);
-        text-transform: uppercase;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: 0.15em; 
+            font-size: 2.2em; 
+            font-weight: 700; 
+            margin-top: 20px;
+            margin-bottom: 50px; 
+            color: var(--text-bright);
+            text-transform: uppercase;
         }
         
         /* --- MANIFESTO BLOCK --- */
@@ -71,7 +68,7 @@
         /* --- GRID SYSTEM --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             text-align: left;
         }
@@ -81,7 +78,7 @@
             background: var(--card-bg);
             padding: 30px;
             border: 1px solid var(--border-dim);
-            border-radius: 0px; /* SHARP CORNERS */
+            border-radius: 0px; 
             transition: all 0.1s ease-in-out;
         }
 
