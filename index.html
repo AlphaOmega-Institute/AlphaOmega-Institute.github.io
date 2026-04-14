@@ -8,27 +8,25 @@
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
         :root {
-            --bg-deep: #060a12;
-            --bg-card: #0a0f1a;
+            --bg: #0b1e3d;
+            --bg-card: #d8e0ed;
+            --bg-card-hover: #c8d2e4;
             --navy: #0f2850;
-            --navy-light: #1a3a6a;
-            --blue-gray: #dce4f0;
-            --text-main: #8a92a4;
-            --text-bright: #cdd3e0;
-            --text-dim: #4a5168;
-            --accent: #dce4f0;
-            --border-dim: #1a2240;
-            --border-hover: #3a5080;
-            --rule-heavy: #0f2850;
-            --rule-light: #1a2a50;
+            --text-white: #f0f2f6;
+            --text-white-dim: #a0acc4;
+            --text-card: #1a2a48;
+            --text-card-dim: #3a4a68;
+            --text-card-link: #4a5a78;
+            --rule-heavy: rgba(220,228,240,0.4);
+            --rule-light: rgba(220,228,240,0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { 
             font-family: 'EB Garamond', 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
-            background-color: var(--bg-deep); 
-            color: var(--text-main); 
+            background-color: var(--bg); 
+            color: var(--text-white); 
             text-align: center; 
             padding-top: 80px; 
             -webkit-font-smoothing: antialiased;
@@ -45,41 +43,39 @@
         img.logo { 
             width: 140px; 
             margin-bottom: 30px; 
-            border: 1px solid var(--border-dim);
-            filter: grayscale(40%) contrast(110%) brightness(90%);
+            border: 1px solid rgba(220,228,240,0.15);
+            filter: brightness(110%) contrast(105%);
             transition: filter 0.3s ease;
         }
         img.logo:hover {
-            filter: grayscale(0%) contrast(100%) brightness(100%);
+            filter: brightness(120%) contrast(110%);
         }
 
         h1 { 
-            font-family: 'EB Garamond', 'Palatino Linotype', Palatino, serif;
-            letter-spacing: 0.08em; 
-            font-size: 2.6em; 
+            letter-spacing: 0.06em; 
+            font-size: 2.8em; 
             font-weight: 500; 
             margin-top: 15px;
             margin-bottom: 10px; 
-            color: var(--blue-gray);
+            color: var(--text-white);
         }
 
         .subtitle {
-            font-family: 'EB Garamond', 'Palatino Linotype', Palatino, serif;
             font-style: italic;
-            font-size: 1.05em;
-            color: var(--text-dim);
+            font-size: 1.1em;
+            color: var(--text-white-dim);
             letter-spacing: 0.03em;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         /* --- RULE PAIR (matching letterhead) --- */
         .rule-pair {
-            max-width: 700px;
-            margin: 0 auto 50px auto;
+            max-width: 680px;
+            margin: 0 auto 45px auto;
         }
         .rule-heavy {
             height: 2px;
-            background: var(--navy);
+            background: var(--rule-heavy);
             margin-bottom: 3px;
         }
         .rule-light {
@@ -87,24 +83,14 @@
             background: var(--rule-light);
         }
         
-        /* --- MANIFESTO BLOCK --- */
-        .manifesto { 
+        /* --- MOTTO --- */
+        .motto { 
             font-family: 'Courier New', 'Roboto Mono', monospace;
             font-size: 0.78em;
             text-transform: uppercase;
-            color: var(--text-dim); 
-            margin: 0 auto 80px auto; 
-            line-height: 1.6;
-            max-width: 560px;
-            border-left: 2px solid var(--navy-light);
-            padding-left: 20px;
-            text-align: left;
-            letter-spacing: 0.04em;
-        }
-
-        .manifesto .tagline {
-            margin-top: 0.8em;
-            color: var(--text-main);
+            color: var(--text-white-dim); 
+            margin: 0 auto 75px auto; 
+            letter-spacing: 0.08em;
         }
 
         /* --- GRID SYSTEM --- */
@@ -119,34 +105,32 @@
         .card {
             background: var(--bg-card);
             padding: 32px;
-            border: 1px solid var(--border-dim);
+            border: 1px solid rgba(220,228,240,0.3);
             transition: all 0.2s ease;
         }
 
         .card:hover {
             transform: translateY(-2px);
-            border-color: var(--border-hover);
-            background: #0d1424;
+            background: var(--bg-card-hover);
+            border-color: rgba(220,228,240,0.5);
         }
         
-        /* --- TYPOGRAPHY --- */
-        h3 { 
-            font-family: 'Courier New', 'Roboto Mono', monospace;
+        /* --- CARD TYPOGRAPHY --- */
+        .card h3 { 
             margin-top: 0; 
-            color: var(--text-bright); 
-            font-size: 0.85em; 
+            color: var(--navy); 
+            font-size: 0.95em; 
             text-transform: uppercase; 
-            letter-spacing: 2.5px; 
-            border-bottom: 1px solid var(--border-dim);
+            letter-spacing: 0.15em; 
+            border-bottom: 1px solid rgba(15,40,80,0.15);
             padding-bottom: 14px;
             margin-bottom: 18px;
-            font-weight: 400;
+            font-weight: 600;
         }
 
-        h4 {
-            font-family: 'EB Garamond', 'Palatino Linotype', Palatino, serif;
+        .card h4 {
             margin: 0 0 10px 0;
-            color: var(--blue-gray);
+            color: var(--text-card);
             font-size: 1.15em;
             font-weight: 500;
             font-style: italic;
@@ -154,42 +138,31 @@
         }
 
         .card p { 
-            font-family: 'EB Garamond', 'Palatino Linotype', Palatino, serif;
             font-size: 1.0em; 
-            color: var(--text-dim); 
+            color: var(--text-card-dim); 
             line-height: 1.65; 
             margin-bottom: 22px;
         }
 
         /* --- DATA LINKS --- */
-        ul.links { list-style: none; padding: 0; margin: 0; }
-        ul.links li { 
-            margin-bottom: 6px; 
-            font-family: 'Courier New', monospace; 
-            font-size: 0.8em; 
+        .card ul.links { list-style: none; padding: 0; margin: 0; }
+        .card ul.links li { 
+            margin-bottom: 5px; 
+            font-size: 0.9em; 
         }
         
-        ul.links a { 
-            color: var(--text-dim); 
+        .card ul.links a { 
+            color: var(--text-card-link); 
             text-decoration: none; 
-            border-bottom: 1px dotted var(--border-dim); 
+            border-bottom: 1px dotted rgba(15,40,80,0.2); 
             transition: all 0.15s ease;
             display: block;
-            padding: 5px 0;
+            padding: 4px 0;
         }
         
-        ul.links a:hover { 
-            color: var(--accent); 
-            border-bottom-color: var(--navy-light); 
-        }
-        
-        ul.links a::before {
-            content: "> ";
-            color: var(--border-dim);
-            transition: color 0.15s ease;
-        }
-        ul.links a:hover::before {
-            color: var(--navy-light);
+        .card ul.links a:hover { 
+            color: var(--navy); 
+            border-bottom-color: var(--navy); 
         }
 
         /* --- FOOTER --- */
@@ -198,16 +171,16 @@
             padding-bottom: 50px;
         }
         .footer-rule {
-            max-width: 700px;
+            max-width: 680px;
             margin: 0 auto 25px auto;
         }
         .footer-text {
-            font-family: 'Courier New', monospace;
-            font-size: 0.65em;
-            color: var(--border-dim);
-            letter-spacing: 2.5px;
+            font-size: 0.75em;
+            color: var(--text-white-dim);
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             line-height: 1.8;
+            font-weight: 400;
         }
 
     </style>
@@ -224,11 +197,7 @@
             <div class="rule-light"></div>
         </div>
         
-        <div class="manifesto">
-            Advancing the structural foundations of mathematical physics.<br>
-            Formalizing the geometric structure of phenomenal experience.<br>
-            <div class="tagline">// RIGOR IS THE ONLY METRIC.</div>
-        </div>
+        <div class="motto">// Rigor is the only metric.</div>
 
         <div class="grid">
             <div class="card">
@@ -269,8 +238,7 @@
                 <div class="rule-light"></div>
             </div>
             <div class="footer-text">
-                &copy; 2026 Alpha Omega Lattice Corporation<br>
-                New Orleans, USA
+                &copy; 2026 Alpha Omega Lattice Corporation · New Orleans, USA
             </div>
         </footer>
     </div>
