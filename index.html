@@ -34,7 +34,7 @@
         }
 
         .container { 
-            max-width: 1200px; 
+            max-width: 1280px; 
             margin: 0 auto; 
             padding: 20px 30px; 
         }
@@ -96,9 +96,12 @@
         /* --- GRID SYSTEM --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
             text-align: left;
+        }
+        @media (max-width: 960px) {
+            .grid { grid-template-columns: 1fr; }
         }
 
         /* --- CARDS --- */
