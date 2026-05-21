@@ -6,9 +6,7 @@
     <title>A|Ω⟩ Institute</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
-        .bra { position: relative; top: 1px; }
-        .ket { position: relative; top: 2px; }
-        .sym { font-family: 'Courier New', monospace; }
+        
         :root {
             --bg: #0b1e3d;
             --bg-card: #d8e0ed;
@@ -40,26 +38,14 @@
             margin: 0 auto; 
             padding: 20px 30px; 
         }
-        
-        /* --- BRANDING --- */
-        img.logo { 
-            width: 140px; 
-            margin-bottom: 30px; 
-            border: 1px solid rgba(220,228,240,0.15);
-            filter: brightness(110%) contrast(105%);
-            transition: filter 0.3s ease;
-        }
-        img.logo:hover {
-            filter: brightness(120%) contrast(110%);
-        }
 
-        h1 { 
-            letter-spacing: 0.06em; 
-            font-size: 2.8em; 
-            font-weight: 500; 
+        /* --- SVG LOGO SCALING --- */
+        svg.logo {
+            width: 100%;
+            max-width: 450px; 
+            height: auto;
             margin-top: 15px;
-            margin-bottom: 10px; 
-            color: var(--text-white);
+            margin-bottom: 30px;
         }
 
         .subtitle {
@@ -70,7 +56,7 @@
             margin-bottom: 45px;
         }
 
-        /* --- RULE PAIR (matching letterhead) --- */
+        /* --- RULE PAIR --- */
         .rule-pair {
             max-width: 680px;
             margin: 0 auto 45px auto;
@@ -151,11 +137,7 @@
 
         /* --- DATA LINKS --- */
         .card ul.links { list-style: none; padding: 0; margin: 0; }
-        .card ul.links li { 
-            margin-bottom: 5px; 
-            font-size: 0.9em; 
-        }
-        
+        .card ul.links li { margin-bottom: 5px; font-size: 0.9em; }
         .card ul.links a { 
             color: var(--text-card-link); 
             text-decoration: none; 
@@ -164,7 +146,6 @@
             display: block;
             padding: 4px 0;
         }
-        
         .card ul.links a:hover { 
             color: var(--navy); 
             border-bottom-color: var(--navy); 
@@ -187,13 +168,37 @@
             line-height: 1.8;
             font-weight: 400;
         }
-
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="ao_logo.jpg" class="logo" alt="A|Ω⟩ Institute">
-        <h1>A|Ω⟩ Institute</h1>
+
+	<img src="ao_logo.jpg" alt="A|Ω⟩ Institute" style="display: block; margin: 0 auto 20px auto; width: 140px; border: 1px solid rgba(220,228,240,0.15); border-radius: 4px;">
+        
+        <svg class="logo" viewBox="0 0 450 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .logo-main {
+                        font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+                    }
+                    .logo-sym {
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: 300;
+                    }
+                    .logo-omega {
+                        font-family: 'Times New Roman', Times, 'Cambria Math', 'Symbol', serif;
+                    }
+                </style>
+            </defs>
+            <g fill="#f0f2f6" transform="translate(47, 0)">
+                <text x="0" y="65" class="logo-main" style="font-size: 60px;">A</text>
+                <text x="49" y="58" class="logo-sym" style="font-size: 48px;">|</text>
+                <text x="62" y="65" class="logo-omega" style="font-size: 64px;">Ω</text>
+                <text x="108" y="64" class="logo-sym" style="font-size: 66px;">⟩</text>
+                <text x="140" y="64" class="logo-main" style="font-size: 60px;">Institute</text>
+            </g>
+        </svg>
+
         <div class="subtitle">Mathematical Physics · Computational Biology</div>
 
         <div class="rule-pair">
